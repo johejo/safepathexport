@@ -33,9 +33,9 @@ func main() {
 			currentValue = strings.ReplaceAll(currentValue, ":"+value, "")
 		}
 		if push {
-			w.WriteString("export " + currentKey + "=" + currentValue + ":" + value + "\n")
+			w.WriteString("export " + currentKey + `="` + currentValue + ":" + value + `"` + "\n")
 		} else {
-			w.WriteString("export " + currentKey + "=" + value + ":" + currentValue + "\n")
+			w.WriteString("export " + currentKey + `="` + value + ":" + currentValue + `"` + "\n")
 		}
 		os.Exit(0)
 	}
